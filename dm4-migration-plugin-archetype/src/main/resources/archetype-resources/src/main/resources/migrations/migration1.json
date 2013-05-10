@@ -1,0 +1,70 @@
+#set( $symbol_dollar = '$' )
+{
+    topic_types: [
+        {
+            value: "Name",
+            uri: "${groupId}.example.name",
+            data_type_uri: "dm4.core.text",
+            index_mode_uris: ["dm4.core.fulltext"]
+        },
+        {
+            value: "Description",
+            uri: "${groupId}.example.desc",
+            data_type_uri: "dm4.core.html",
+            index_mode_uris: ["dm4.core.fulltext"]
+        },
+        {
+            value: "Example",
+            uri: "${groupId}.example",
+            data_type_uri: "dm4.core.composite",
+            label_config: [ "${groupId}.example.name" ],
+            assoc_defs: [
+                {
+                    child_type_uri:        "${groupId}.example.name",
+                    child_cardinality_uri: "dm4.core.one",
+                    assoc_type_uri:        "dm4.core.composition_def",
+                    view_config_topics: [
+                        {
+                            type_uri: "dm4.webclient.view_config",
+                            composite: {
+                                dm4.webclient.simple_renderer_uri: "dm4.webclient.title_renderer"
+                            }
+                        }
+                    ]
+                },
+                {
+                    child_type_uri:        "${groupId}.example.desc",
+                    child_cardinality_uri: "dm4.core.one",
+                    assoc_type_uri:        "dm4.core.composition_def",
+                    view_config_topics: [
+                        {
+                            type_uri: "dm4.webclient.view_config",
+                            composite: {
+                                dm4.webclient.input_field_rows: 15,
+                                dm4.webclient.simple_renderer_uri: "dm4.webclient.body_text_renderer"
+                            }
+                        }
+                    ]
+                }
+            ],
+            view_config_topics: [
+                {
+                    type_uri: "dm4.webclient.view_config",
+                    composite: {
+                        dm4.webclient.show_in_create_menu: true,
+                        dm4.webclient.searchable_as_unit: true
+                    }
+                }
+            ]
+        }
+    ],
+    topics: [
+        {
+            type_uri: "${groupId}.example",
+            composite: {
+                ${groupId}.example.name: "First Example Topic",
+                ${groupId}.example.desc: "Description of <i>Example Topic</i>"
+            }
+        }
+    ]
+}
