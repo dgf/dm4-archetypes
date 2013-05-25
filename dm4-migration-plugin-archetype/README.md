@@ -1,10 +1,6 @@
 # DeepaMehta 4 Migration Plugin Archetype
 
-Template with a declarative JSON migration that contains
-
- * a composite topic type with a simple name and a HTML description
- * and some topic instances
- * a image resource as icon
+template with a declarative JSON migration
 
 ## Usage
 
