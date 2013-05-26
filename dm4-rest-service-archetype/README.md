@@ -11,6 +11,7 @@ mvn archetype:generate \
 -DgroupId=de.deepamehta.archetype.test \
 -DartifactId=simple-rest-service-plugin \
 -Dversion=1.0-SNAPSHOT \
+-DarchetypeCatalog=http://ci.deepamehta.de \
 -DarchetypeGroupId=de.deepamehta.archetypes \
 -DarchetypeArtifactId=dm4-rest-service-archetype \
 -DarchetypeVersion=4.1 \

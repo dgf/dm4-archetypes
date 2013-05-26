@@ -11,6 +11,7 @@ mvn archetype:generate \
 -DgroupId=de.deepamehta.archetype.test \
 -DartifactId=simple-migration-plugin \
 -Dversion=1.0-SNAPSHOT \
+-DarchetypeCatalog=http://ci.deepamehta.de \
 -DarchetypeGroupId=de.deepamehta.archetypes \
 -DarchetypeArtifactId=dm4-migration-plugin-archetype \
 -DarchetypeVersion=4.1 \

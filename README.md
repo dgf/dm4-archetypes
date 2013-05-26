@@ -6,30 +6,18 @@ specific maven plugin
 
 ## Usage
 
-until there is a public repository with this collection available
-you have to build it for your own
-
-### locally install the archetype collection
-
-```shell
-# clone repository
-git clone http://github.com/dgf/dm4-archetypes
-cd dm4-archetypes
-
-# build archetypes and install them to your local Maven repository
-mvn install
-```
-
 ### create a plugin artifact from an archetype
 
 in general you have to specify the archetype to use
 and all required maven artifact properties
 
 ```shell
+# create artifact
 mvn archetype:generate \
 -DgroupId=<your-plugin-group> \
 -DartifactId=<your-plugin-artifact> \
 -Dversion=<your-artifact-version> \
+-DarchetypeCatalog=http://ci.deepamehta.de \
 -DarchetypeGroupId=de.deepamehta.archetypes \
 -DarchetypeArtifactId=<archetype-to-use> \
 -DarchetypeVersion=4.1 \
@@ -37,6 +25,12 @@ mvn archetype:generate \
 ```
 
 you find a concrete example call in each sub-module documentation
+and you can also use the interactive mode by only providing the catalog
+
+```shell
+# start interactive creation mode
+mvn archetype:generate -DarchetypeCatalog=http://ci.deepamehta.de
+```
 
 ### run DeepaMehta from within your artifact directory
 
