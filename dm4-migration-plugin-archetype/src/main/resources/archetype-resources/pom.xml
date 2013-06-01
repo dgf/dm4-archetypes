@@ -15,4 +15,11 @@
         <artifactId>deepamehta-plugin-parent</artifactId>
         <version>4.1</version>
     </parent>
+
+    <repositories>
+        <repository>
+            <id>deepamehta-public-repository</id>
+            <url>http://deepamehta.newthinking.net/maven2</url>
+        </repository>
+    </repositories>
 </project>

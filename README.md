@@ -4,6 +4,10 @@ a collection of archetypes to create a
 [DeepaMehta 4](http://github.com/jri/deepamehta)
 specific maven plugin
 
+## Requirements
+
+only Maven 3.0.4
+
 ## Usage
 
 ### create a plugin artifact from an archetype
