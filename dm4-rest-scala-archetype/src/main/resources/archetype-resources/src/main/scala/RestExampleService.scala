@@ -1,7 +1,7 @@
 #set( $symbol_dollar = '$' )
 package ${package};
 
-import de.deepamehta.core.{RelatedTopic, ResultSet}
+import de.deepamehta.core.RelatedTopic
 import de.deepamehta.core.osgi.PluginActivator
 import de.deepamehta.core.service.event.AllPluginsActiveListener
 
@@ -10,30 +10,36 @@ import javax.ws.rs.{GET, Path, Produces, WebApplicationException}
 
 import java.util.logging.Logger
 
-@Path("/example")
+import scala.collection.JavaConverters._
+
+@Path("/example/scala")
 class RestExampleService extends PluginActivator with AllPluginsActiveListener {
 
-  private val log: Logger = Logger.getLogger(classOf[RestExampleService].getName)
+  private val log: Logger = Logger getLogger classOf[RestExampleService].getName
 
-  def allPluginsActive() = {
-    log.info("create some Notes and open /example/notes to check this service")
+  @Override
+  def allPluginsActive() {
+    log info "create some Notes and open /example/scala/notes to check this service"
   }
 
   /**
-   * @return all <code>Note</code> topics as result set
+   * @return list of all <code>Note</code> titles
    */
   @GET
   @Path("/notes")
-  @Produces(Array(MediaType.APPLICATION_JSON))
-  def listAllNoteTitles: ResultSet[RelatedTopic] = {
-    log.info("return all Note topics")
+  @Produces(Array("application/json"))
+  def listAllNoteTitles: java.util.Set[String] = {
+    log info "return all Note titles"
     try {
-      val topics: ResultSet[RelatedTopic] = dms.getTopics("dm4.notes.note", true, 0, null)
-      log.finest("Note topics: \n" + topics.toJSON)
-      topics
+      val topics = dms.getTopics("dm4.notes.note", true, 0, null).asScala
+      val titles = for (t: RelatedTopic <- topics.toSet) yield {
+        log finest t.toJSON.toString
+        t.getCompositeValue.getString("dm4.notes.title", "n/a")
+      }
+      titles.asJava
     } catch {
       case e: Exception => {
-        log.warning(e.getMessage)
+        log warning e.getMessage
         throw new WebApplicationException(e)
       }
     }
