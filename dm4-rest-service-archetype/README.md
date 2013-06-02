@@ -6,7 +6,7 @@ template with a REST service
 
 create a simple REST plugin
 
-```shell
+```sh
 mvn archetype:generate \
 -DgroupId=de.deepamehta.archetypes.test \
 -DartifactId=simple-rest-service-plugin \

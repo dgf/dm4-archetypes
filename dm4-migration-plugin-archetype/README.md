@@ -6,7 +6,7 @@ template with a declarative JSON migration
 
 create a simple migration plugin
 
-```shell
+```sh
 mvn archetype:generate \
 -DgroupId=de.deepamehta.archetypes.test \
 -DartifactId=simple-migration-plugin \
