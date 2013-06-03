@@ -14,14 +14,14 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
-@Path("/example")
+@Path("/example/java")
 public class RestExampleService extends PluginActivator implements AllPluginsActiveListener {
 
     private static Logger log = Logger.getLogger(RestExampleService.class.getName());
 
     @Override
     public void allPluginsActive() {
-        log.info("create some Notes and open /example/notes to check this service");
+        log.info("create some Notes and open /example/java/notes to check this service");
     }
 
     /**

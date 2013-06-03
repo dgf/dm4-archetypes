@@ -18,8 +18,8 @@
 
     <modules>
         <module>dm4-migration-plugin-archetype</module>
-        <module>dm4-rest-service-archetype</module>
         <module>dm4-rest-groovy-archetype</module>
+        <module>dm4-rest-java-archetype</module>
         <module>dm4-rest-scala-archetype</module>
     </modules>
 
