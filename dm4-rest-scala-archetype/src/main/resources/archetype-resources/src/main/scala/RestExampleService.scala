@@ -6,7 +6,7 @@ import de.deepamehta.core.osgi.PluginActivator
 import de.deepamehta.core.service.event.AllPluginsActiveListener
 
 import javax.ws.rs.core.MediaType
-import javax.ws.rs.{GET, Path, Produces, WebApplicationException}
+import javax.ws.rs.{GET, Path, Produces}
 
 import java.util.logging.Logger
 
@@ -30,18 +30,11 @@ class RestExampleService extends PluginActivator with AllPluginsActiveListener {
   @Produces(Array("application/json"))
   def listAllNoteTitles: java.util.Set[String] = {
     log info "return all Note titles"
-    try {
-      val topics = dms.getTopics("dm4.notes.note", true, 0, null).asScala
-      val titles = for (t: RelatedTopic <- topics.toSet) yield {
-        log finest t.toJSON.toString
-        t.getCompositeValue.getString("dm4.notes.title", "n/a")
-      }
-      titles.asJava
-    } catch {
-      case e: Exception => {
-        log warning e.getMessage
-        throw new WebApplicationException(e)
-      }
+    val topics = dms.getTopics("dm4.notes.note", true, 0).asScala
+    val titles = for (t: RelatedTopic <- topics.toSet) yield {
+      log finest t.toJSON.toString
+      t.getCompositeValue.getString("dm4.notes.title", "n/a")
     }
+    titles.asJava
   }
 }

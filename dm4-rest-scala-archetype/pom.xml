@@ -6,13 +6,13 @@
     <name>DeepaMehta 4 :: Archetypes :: REST Scala Plugin</name>
     <groupId>de.deepamehta.archetypes</groupId>
     <artifactId>dm4-rest-scala-archetype</artifactId>
-    <version>4.1</version>
+    <version>4.1.3-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <parent>
         <groupId>de.deepamehta</groupId>
         <artifactId>dm4-archetypes</artifactId>
-        <version>4.1</version>
+        <version>4.1.3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 </project>

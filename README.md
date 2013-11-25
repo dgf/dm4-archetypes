@@ -33,7 +33,7 @@ mvn archetype:generate \
 -DarchetypeCatalog=http://ci.deepamehta.de \
 -DarchetypeGroupId=de.deepamehta.archetypes \
 -DarchetypeArtifactId=<archetype-to-use> \
--DarchetypeVersion=4.1 \
+-DarchetypeVersion=4.1.3-SNAPSHOT \
 -DinteractiveMode=false
 ```
 
