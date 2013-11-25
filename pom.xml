@@ -9,13 +9,6 @@
     <version>4.1.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <repositories>
-        <repository>
-            <id>deepamehta-public-repository</id>
-            <url>http://deepamehta.newthinking.net/maven2</url>
-        </repository>
-    </repositories>
-
     <modules>
         <module>dm4-migration-plugin-archetype</module>
         <module>dm4-rest-groovy-archetype</module>

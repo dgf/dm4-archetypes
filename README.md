@@ -16,7 +16,7 @@ you can use the interactive mode by only providing the catalog URL
 
 ```sh
 # start interactive creation mode
-mvn archetype:generate -DarchetypeCatalog=http://ci.deepamehta.de
+mvn archetype:generate -DarchetypeCatalog=http://m2.deepamehta.de
 ```
 
 ### create a plugin artifact from an archetype
@@ -30,7 +30,7 @@ mvn archetype:generate \
 -DgroupId=<your-plugin-group> \
 -DartifactId=<your-plugin-artifact> \
 -Dversion=<your-artifact-version> \
--DarchetypeCatalog=http://ci.deepamehta.de \
+-DarchetypeCatalog=http://m2.deepamehta.de \
 -DarchetypeGroupId=de.deepamehta.archetypes \
 -DarchetypeArtifactId=<archetype-to-use> \
 -DarchetypeVersion=4.1.3-SNAPSHOT \

@@ -11,7 +11,7 @@ mvn archetype:generate \
 -DgroupId=de.deepamehta.archetypes.test \
 -DartifactId=simple-rest-java-plugin \
 -Dversion=1.0-SNAPSHOT \
--DarchetypeCatalog=http://ci.deepamehta.de \
+-DarchetypeCatalog=http://m2.deepamehta.de \
 -DarchetypeGroupId=de.deepamehta.archetypes \
 -DarchetypeArtifactId=dm4-rest-java-archetype \
 -DarchetypeVersion=4.1.3-SNAPSHOT \
