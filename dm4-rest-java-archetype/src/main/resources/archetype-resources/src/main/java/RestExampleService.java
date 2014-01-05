@@ -2,7 +2,6 @@
 package ${package};
 
 import de.deepamehta.core.RelatedTopic;
-import de.deepamehta.core.ResultSet;
 import de.deepamehta.core.osgi.PluginActivator;
 import de.deepamehta.core.service.event.AllPluginsActiveListener;
 
