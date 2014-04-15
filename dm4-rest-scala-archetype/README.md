@@ -14,6 +14,6 @@ mvn archetype:generate \
 -DarchetypeCatalog=http://m2.deepamehta.de \
 -DarchetypeGroupId=de.deepamehta.archetypes \
 -DarchetypeArtifactId=dm4-rest-scala-archetype \
--DarchetypeVersion=4.1.3 \
+-DarchetypeVersion=4.2 \
 -DinteractiveMode=false
 ```

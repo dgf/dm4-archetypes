@@ -29,7 +29,7 @@ class RestExampleService extends PluginActivator with AllPluginsActiveListener {
   @Path("/notes")
   @Produces(Array("application/json"))
   def listAllNoteTitles: java.util.Set[String] = {
-    log info "return all Note titles"
+    log info "Scala returns all Note titles"
     val topics = dms.getTopics("dm4.notes.note", true, 0).asScala
     val titles = for (t: RelatedTopic <- topics.toSet) yield {
       log finest t.toJSON.toString

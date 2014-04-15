@@ -29,7 +29,7 @@ public class RestExampleService extends PluginActivator implements AllPluginsAct
     @Path("/notes")
     @Produces("application/json")
     public Set<String> listAllNoteTitles() {
-        log.info("return all Note titles");
+        log.info("Java returns all Note titles");
         Set<String> titles = new HashSet<String>();
         for (RelatedTopic note : dms.getTopics("dm4.notes.note", true, 0)) {
             log.finest(note.toJSON().toString());

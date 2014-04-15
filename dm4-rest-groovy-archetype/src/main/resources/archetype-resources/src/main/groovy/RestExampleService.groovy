@@ -27,7 +27,7 @@ class RestExampleService extends PluginActivator implements AllPluginsActiveList
     @Path("/notes")
     @Produces("application/json")
     Set<String> listAllNoteTitles() {
-        log.info "return all Note titles"
+        log.info "Groovy returns all Note titles"
         dms.getTopics("dm4.notes.note", true, 0).collect {
             log.finest it.toJSON().toString()
             it.getCompositeValue().getString "dm4.notes.title", "n/a"
